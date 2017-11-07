@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AhorcadoRandom 2.0</title>
+  </head>
+    <body>
+    <script>
+    // generamos las variables
+    var resultado="";
+    var intentos=0;
+    var letraAlmacenada="";
+    var abandonarBucle=false;
+
+    // configuramos el random y lo mostramos por consola
+    numeroRandom=Math.floor(Math.random()*(96-123+1)+123);
+    console.log(numeroRandom);
+
+    letraRandom= String.fromCharCode(numeroRandom);
+    console.log(letraRandom);
+
+    letraAlmacenada=prompt("Dime una letra makinon");
+    console.log(letraAlmacenada);
+
+    // comprobamos que la letra introducida esta en minuscula con:
+    if (letraAlmacenada == letraAlmacenada.toLowerCase()) {
+      resultado = "Letra minuscula.";
+
+    }else {
+      resultado="Las mayusculas no son validas.";
+      alert("Las mayusculas no son validas");
+    }
+
+    // numero de intentos y salida del bucle
+    while (letraAlmacenada!=letraRandom && intentos < 5) {
+      letraPedida=prompt("Dime otra letra makinon");
+      intentos++;
+    }
+
+    if (letraAlmacenada==letraRandom) {
+    document.write("Premio pa ti makinon");
+    abandonarBucle=true;
+    }
+    </script>
+  </body>
+</html>
